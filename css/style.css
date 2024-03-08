@@ -243,17 +243,14 @@ body {
 .description-text__next a {
   color: inherit;
 }
-.description-text__next:before {
-  content: "";
-  margin-left: 9px;
-  margin-top: 7px;
-  position: absolute;
-  left: 0;
-  width: 8px;
-  height: 11px;
-  background-image: url("/img/main/arrow.svg");
-  background-repeat: no-repeat;
-}
+.description-text__next img{
+         margin-left: 9px;
+         margin-top: 7px;
+         position: absolute;
+         left: 0;
+         width: 8px;
+         height: 11px;
+    }
 
 .navigation__item {
   white-space: nowrap;
