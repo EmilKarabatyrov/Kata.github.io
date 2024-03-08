@@ -100,12 +100,13 @@ body {
   font-weight: 500;
   font-family: "TT Lakes";
   color: #252B42;
+  overflow-x: scroll;
   line-height: 1;
 }
 
 .wrapper {
   min-height: 100%;
-  overflow: scroll;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
