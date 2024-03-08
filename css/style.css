@@ -105,7 +105,7 @@ body {
 
 .wrapper {
   min-height: 100%;
-  overflow: hidden;
+  overflow: scroll;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -251,7 +251,7 @@ body {
   left: 0;
   width: 8px;
   height: 11px;
-  background-image: url("/img/main/arrow.svg");
+  background-image: url("img/main/arrow.svg");
   background-repeat: no-repeat;
 }
 
