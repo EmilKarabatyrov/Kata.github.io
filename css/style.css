@@ -396,6 +396,7 @@ body {
   }
   .navigation {
     width: 1050px;
+     overflow: none;
    flex-wrap: wrap;
   }
   .navigation__item--active-1 {
