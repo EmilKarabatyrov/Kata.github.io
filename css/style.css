@@ -6,7 +6,6 @@
 }
 
 *, *:before, *:after {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -28,16 +27,13 @@ html, body {
   font-size: 100%;
   line-height: 1;
   font-size: 14px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 
 input, button, textarea {
   font-family: inherit;
 }
 
-input::-ms-clear {
+input {
   display: none;
 }
 
@@ -45,7 +41,7 @@ button {
   cursor: pointer;
 }
 
-button::-moz-focus-inner {
+button {
   padding: 0;
   border: 0;
 }
@@ -107,25 +103,15 @@ body {
 .wrapper {
   min-height: 100%;
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .header {
   background-color: rgb(255, 255, 255);
 }
 .header__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   min-height: 90px;
   max-width: 320px;
   padding: 0px 15px;
@@ -147,9 +133,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-right: 20px;
 }
 .header__logo img {
@@ -167,13 +151,8 @@ body {
 }
 
 .main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 .main__container {
   max-width: 320px;
@@ -198,26 +177,16 @@ body {
   background: rgb(65, 246, 215);
 }
 .main__navigation {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  align-items: center;
+  flex-wrap: nowrap;
   margin-bottom: 24px;
 }
 .main__description {
   width: 320px;
   height: 322px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .description-text__paragraphs {
@@ -280,20 +249,14 @@ body {
 
 @media (min-width: 767px) {
   .header {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+  justify-content: flex-end;
   }
   .header__container {
     max-width: 720px;
   }
   .header__burger {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     margin-right: 16px;
   }
   .header__burger img {
@@ -315,12 +278,8 @@ body {
     margin-right: 16px;
   }
   .header__profile {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     margin-right: 16px;
   }
   .header__profile img {
@@ -337,11 +296,8 @@ body {
     margin-right: 16px;
   }
   .header__logo {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    -ms-flex-preferred-size: auto;
-        flex-basis: auto;
+    flex-grow: 1;
+    flex-basis: auto;
   }
   .header__logo:after {
     display: none;
@@ -351,13 +307,8 @@ body {
   .main__description {
     width: 720px;
     height: 208px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
   .main__container {
     max-width: 720px;
@@ -399,12 +350,8 @@ body {
     display: none;
   }
   .header__service {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
   .header__service::before {
     content: "Оставить заявку";
@@ -415,12 +362,8 @@ body {
     line-height: 150%;
   }
   .header__status {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
   .header__status::before {
     content: "Статус ремонта";
@@ -445,8 +388,7 @@ body {
   }
   .navigation {
     width: 1050px;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   .navigation__item--active-1 {
     display: block;
