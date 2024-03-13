@@ -6,7 +6,6 @@
 }
 
 *, *:before, *:after {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -68,6 +67,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+
+/*  ОБНУЛЯЮЩИЕ СТИЛИ */
+
+
 @font-face {
   font-family: "TT Lakes";
   src: url("./../fonts/TTLakes-Bold.woff2") format("woff2"), url("./../fonts/TTLakes-Bold.woff") format("woff"), url("./../fonts/TTLakes-Bold.ttf") format("truetype");
@@ -91,7 +94,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 html,
 body {
-  height: 100%;
   font-size: 14px;
   background-color: #fafafa;
   font-weight: 500;
@@ -109,54 +111,50 @@ body {
 
 .header {
   background-color: rgb(255, 255, 255);
-}
-.header__container {
-   display: flex;
-   align-items: center;
-   min-height: 90px;
-   max-width: 320px;
-   padding: 0px 15px;
-   margin: 0px auto;
-}
-.header__call {
-  display: none;
-}
-.header__chat {
-  display: none;
-}
-.header__profile {
-  display: none;
-}
-.header__burger {
-  margin-right: 16.73px;
-}
-.header__logo {
   display: flex;
    align-items: center;
+   min-height: 90px;
+   padding: 0px 15px;
+   
+}
+.header__icon--call {
+  display: none;
+}
+.header__icon--chat {
+  display: none;
+}
+.header__icon--profile {
+  display: none;
+}
+.header__icon--burger {
+  margin-right: 16.73px;
+  display: block;
+}
+.header__icon--logo {
+   display: block;
+  display: flex;
+   align-items: center;
+   flex-grow: 1;
   margin-right: 20px;
 }
-.header__logo img {
+.header__icon--logo img {
   padding-right: 16px;
 }
-.header__logo:after {
+.header__icon--logo:after {
   content: "";
   width: 2px;
   height: 32px;
   border-radius: 1px;
   background: rgb(234, 234, 234);
 }
-.header__service {
+.header__icon--service {
   margin-right: 16px;
 }
-
 .main {
+   position: relative;
   display: flex;
    flex-direction: column;
-}
-.main__container {
-  max-width: 320px;
-  padding: 0px 15px;
-  margin: 0px auto;
+   padding: 0px 15px;
 }
 .main__decoration {
   font-size: 40px;
@@ -173,6 +171,13 @@ body {
   font-weight: 700;
   line-height: 142%;
 }
+.main__title span{
+   display: block;
+   width: 4px;
+   height: 40px;
+   position: absolute;
+   left: -4px;
+}
 .main__navigation {
   display: flex;
    align-items: center;
@@ -180,10 +185,9 @@ body {
   margin-bottom: 24px;
 }
 .main__description {
-  width: 320px;
-  height: 322px;
   display: flex;
    flex-direction: column;
+   gap: 16px;
 }
 
 .description-text__paragraphs {
@@ -191,11 +195,14 @@ body {
   font-size: 14px;
   font-weight: 400;
   line-height: 128%;
-  text-align: left;
-  width: 270px;
-  height: 90px;
   overflow: hidden;
   margin-bottom: 16px;
+}
+.description-text__paragraphs p{
+   display: none;
+}
+.description-text__paragraphs p:first-child{
+   display: block;
 }
 .description-text__next {
   display: inline-block;
@@ -204,7 +211,6 @@ body {
   font-size: 16px;
   font-weight: 500;
   line-height: 150%;
-  margin-bottom: 16px;
   padding-left: 30px;
 }
 .description-text__next a {
@@ -218,6 +224,9 @@ body {
   width: 8px;
   height: 11px;
 }
+.main__description-img img{
+   width: 100%;
+}
 .navigation{
    overflow-x: scroll;
 }
@@ -226,22 +235,24 @@ body {
   color: rgb(126, 126, 130);
   font-size: 16px;
   font-weight: 500;
-  line-height: 150%;
+  flex: 1 1 auto;
+  padding: 8px 0px;
+  padding-left: 16.54px;
+  padding-right: 9.3px;
+  transition: 0.1s ease;
+}
+.navigation__item a{
+   color: inherit;
 }
 .navigation__item:not(:last-child) {
   margin-right: 23px;
 }
-.navigation__item--active-2 {
-  border: 2px solid rgb(184, 255, 236);
-  border-radius: 6px;
-  background: rgb(255, 255, 255);
-  padding: 8px 0px;
-  padding-left: 16.54px;
-  padding-right: 9.3px;
+.navigation__item:hover{
+   border: 2px solid rgb(184, 255, 236);
+   border-radius: 6px;
+   background: rgb(255, 255, 255);
 }
-.navigation__item--active-1 {
-  display: none;
-}
+
 .navigation__item-replace-1 {
   display: none;
 }
@@ -254,81 +265,79 @@ body {
   .header__container {
     max-width: 720px;
   }
-  .header__burger {
+  .header__icon--burger {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
    align-items: center;
     margin-right: 16px;
   }
-  .header__burger img {
+  .header__icon--burger img {
     padding-right: 20px;
   }
-  .header__burger:after {
+  .header__icon--burger:after {
     content: "";
     width: 2px;
     height: 32px;
     border-radius: 1px;
     background: rgb(234, 234, 234);
   }
-  .header__call {
+  .header__icon--call{
     display: inline-block;
     margin-right: 16px;
   }
-  .header__chat {
+  .header__icon--chat {
     display: inline-block;
     margin-right: 16px;
   }
-  .header__profile {
+  .header__icon--profile {
     display: flex;
     align-items: center;
     margin-right: 16px;
   }
-  .header__profile img {
+  .header__icon--profile img {
     padding-right: 20px;
   }
-  .header__profile:after {
+  .header__icon--profile:after {
     content: "";
     width: 2px;
     height: 32px;
     border-radius: 1px;
     background: rgb(234, 234, 234);
   }
-  .header__service {
+  .header__icon--service {
     margin-right: 16px;
   }
-  .header__logo {
+  .header__icon--logo {
    flex-grow: 1;
    flex-basis: auto;
   }
-  .header__logo:after {
+  .header__icon--logo:after {
     display: none;
   }
 }
 @media (min-width: 767px) {
   .main__description {
-    width: 720px;
-    height: 208px;
     display: flex;
    flex-direction: row;
+   gap: 48px
   }
   .main__decoration {
     margin-right: 20px;
-  }
-  .main__container {
-    max-width: 720px;
+    justify-content: space-between;
   }
   .description-text {
-    width: 312px;
-    height: 160px;
-    margin-right: 50px;
-  }
-  .description-text__paragraphs {
-    width: 312px;
-    height: 135px;
+   min-width: 312px;
+   max-width: 50%;
   }
   .description-text__paragraphs p:not(:last-child) {
     margin-bottom: 30px;
+  }
+  .description-text__paragraphs p:last-child{
+   display: block;
+   }
+  .main__description-img{
+   flex: 1 1 auto;
   }
 }
 @media (min-width: 1120px) {
@@ -336,29 +345,26 @@ body {
     position: relative;
     background: rgb(248, 248, 248);
   }
-  .header__container {
-    max-width: 1060px;
-  }
-  .header__burger {
+  .header__icon--burger {
     display: none;
   }
-  .header__logo {
+  .header__icon--logo {
     visibility: hidden;
   }
-  .header__call {
+  .header__icon--call {
     display: none;
   }
-  .header__chat {
+  .header__icon--chat {
     display: none;
   }
-  .header__profile {
+  .header__icon--profile {
     display: none;
   }
-  .header__service {
+  .header__icon--service {
     display: flex;
    align-items: center;
   }
-  .header__service::before {
+  .header__icon--service::before {
     content: "Оставить заявку";
     color: rgb(27, 28, 33);
     font-size: 16px;
@@ -366,11 +372,11 @@ body {
     padding-right: 8px;
     line-height: 150%;
   }
-  .header__status {
+  .header__icon--status {
     display: flex;
    align-items: center;
   }
-  .header__status::before {
+  .header__icon--status::before {
     content: "Статус ремонта";
     color: rgb(27, 28, 33);
     font-size: 16px;
@@ -380,10 +386,6 @@ body {
   }
 }
 @media (min-width: 1120px) {
-  .main__container {
-    position: relative;
-    max-width: 1060px;
-  }
   .main__decoration span {
     width: 4px;
     height: 40px;
@@ -393,50 +395,20 @@ body {
     position: fixed;
     top: 0;
   }
+  .main__title span{
+   left: -19px;
+  }
   .navigation {
-    width: 1050px;
     overflow: auto;
    flex-wrap: wrap;
-  }
-  .navigation__item--active-1 {
-    display: block;
-    border: 2px solid rgb(184, 255, 236);
-    border-radius: 6px;
-    background: rgb(255, 255, 255);
-    padding: 8px 0px;
-    padding-left: 16.54px;
-    padding-right: 9.3px;
-    margin-right: 19.56px;
-  }
-  .navigation__item--active-2 {
-    border: 0;
-    background: 0;
-    padding-left: 0;
   }
   .navigation__item-replace-1 {
     display: block;
   }
-  .navigation__item:nth-child(3) {
-    display: none;
-  }
-  .navigation__item:last-child {
-    margin-left: 22px;
-    margin-top: 15px;
-  }
   .description-text {
-    width: 490px;
-    height: 160px;
     margin-right: 20px;
-  }
-  .description-text__paragraphs {
-    width: 490px;
-    height: 160px;
   }
   .description-text__paragraphs p:not(:last-child) {
     margin-bottom: 30px;
-  }
-  .main__description-img img {
-    width: 530px;
-    height: 307px;
   }
 }
