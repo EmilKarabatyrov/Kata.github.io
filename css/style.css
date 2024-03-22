@@ -95,12 +95,13 @@ h1, h2, h3, h4, h5, h6 {
 html,
 body {
   font-size: 14px;
-  background-color: #fafafa;
+  background-color: rgb(255, 255, 255);
   font-weight: 500;
   font-family: "TT Lakes";
   color: #252B42;
   overflow-x: scroll;
   line-height: 1;
+  
 }
 
 .wrapper {
@@ -110,44 +111,41 @@ body {
 }
 
 .header {
-  background-color: rgb(255, 255, 255);
   display: flex;
-   align-items: center;
-   min-height: 90px;
-   padding: 0px 15px;
-   
+  align-items: center;
+  min-height: 90px;
+  padding: 0 15px;
 }
-.header__icon--call {
+.icon-call {
   display: none;
 }
-.header__icon--chat {
+.icon-chat {
   display: none;
 }
-.header__icon--profile {
+.icon-profile {
   display: none;
 }
-.header__icon--burger {
+.icon-burger {
   margin-right: 16.73px;
   display: block;
 }
-.header__icon--logo {
-   display: block;
+.logo{
   display: flex;
    align-items: center;
    flex-grow: 1;
   margin-right: 20px;
 }
-.header__icon--logo img {
+.logo img {
   padding-right: 16px;
 }
-.header__icon--logo:after {
+.logo:after {
   content: "";
   width: 2px;
   height: 32px;
   border-radius: 1px;
   background: rgb(234, 234, 234);
 }
-.header__icon--service {
+.icon-service {
   margin-right: 16px;
 }
 .main {
@@ -245,7 +243,7 @@ body {
    color: inherit;
 }
 .navigation__item:not(:last-child) {
-  margin-right: 23px;
+   margin-right: 23px;
 }
 .navigation__item:hover{
    border: 2px solid rgb(184, 255, 236);
@@ -265,54 +263,54 @@ body {
   .header__container {
     max-width: 720px;
   }
-  .header__icon--burger {
+  .icon-burger {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
    align-items: center;
     margin-right: 16px;
   }
-  .header__icon--burger img {
+  .icon-burger img {
     padding-right: 20px;
   }
-  .header__icon--burger:after {
+  .icon-burger:after {
     content: "";
     width: 2px;
     height: 32px;
     border-radius: 1px;
     background: rgb(234, 234, 234);
   }
-  .header__icon--call{
+  .icon-call{
     display: inline-block;
     margin-right: 16px;
   }
-  .header__icon--chat {
+  .icon-chat {
     display: inline-block;
     margin-right: 16px;
   }
-  .header__icon--profile {
+  .icon-profile {
     display: flex;
     align-items: center;
     margin-right: 16px;
   }
-  .header__icon--profile img {
+  .icon-profile img {
     padding-right: 20px;
   }
-  .header__icon--profile:after {
+  .icon-profile:after {
     content: "";
     width: 2px;
     height: 32px;
     border-radius: 1px;
     background: rgb(234, 234, 234);
   }
-  .header__icon--service {
+  .icon-service {
     margin-right: 16px;
   }
-  .header__icon--logo {
+  .logo{
    flex-grow: 1;
    flex-basis: auto;
   }
-  .header__icon--logo:after {
+  .logo:after {
     display: none;
   }
 }
@@ -343,28 +341,27 @@ body {
 @media (min-width: 1120px) {
   .header {
     position: relative;
-    background: rgb(248, 248, 248);
   }
-  .header__icon--burger {
+  .icon-burger {
     display: none;
   }
-  .header__icon--logo {
+  .logo{
     visibility: hidden;
   }
-  .header__icon--call {
+  .icon-call {
     display: none;
   }
-  .header__icon--chat {
+  .icon-chat {
     display: none;
   }
-  .header__icon--profile {
+  .icon-profile {
     display: none;
   }
-  .header__icon--service {
+  .icon-service {
     display: flex;
    align-items: center;
   }
-  .header__icon--service::before {
+  .icon-service::before {
     content: "Оставить заявку";
     color: rgb(27, 28, 33);
     font-size: 16px;
@@ -372,11 +369,11 @@ body {
     padding-right: 8px;
     line-height: 150%;
   }
-  .header__icon--status {
+  .icon-status {
     display: flex;
    align-items: center;
   }
-  .header__icon--status::before {
+  .icon-status::before {
     content: "Статус ремонта";
     color: rgb(27, 28, 33);
     font-size: 16px;
@@ -411,4 +408,122 @@ body {
   .description-text__paragraphs p:not(:last-child) {
     margin-bottom: 30px;
   }
+}
+
+/* =========================ASIDE============================*/
+
+.aside{
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
+   width: 320px;
+   box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2),-2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+}
+.aside__head{
+   display: flex;
+   align-items: center;
+   padding: 15px 24px;
+}
+.head__icon--close {
+   margin-right: 17px;
+   transition: all 0.3s ease-in-out;
+}
+.head__icon--close:hover {
+   opacity: 0.7;
+}
+.aside-logo {
+   flex: 1 1 auto;
+}
+.head__icon--search:hover{
+   transition: all 0.3s ease-in-out;
+   opacity: 0.7;
+}
+.aside__menu{
+   flex: 1 1 auto;
+   margin-top: 30px;
+   padding-left: 24px;
+   position: relative;
+}
+
+.menu__item a{
+   display: block;
+   color: rgb(27, 28, 33);
+   padding-bottom: 32px;
+   font-size: 16px;
+   font-weight: 500;
+   line-height: 150%;
+}
+.menu__item:hover{
+   transition: all 0.2s ease-in-out;
+   opacity: 0.5;
+}
+.menu__item--active a{
+   color: rgb(126, 126, 130);
+}
+.menu__item--active a::before{
+   content: '';
+   border: 4px solid rgb(65, 246, 215);
+   border-radius: 5px;
+   margin-right: 12px;
+   display: block;
+   width: 4px;
+   height: 32px;
+   position: absolute;
+   left: -4px;
+}
+.menu__item--active:hover{
+   opacity: 1;
+}
+.aside__contacts {
+   margin-left: 24px;
+   margin-bottom: 32px;
+}
+.contacts__buttons{
+   margin-bottom: 10px;
+}
+.contacts__buttons a:not(:last-child){
+   margin-right: 14px;
+}
+.contacts__icon--call:hover{
+   transition: all 0.3s ease-in-out;
+   opacity: 0.5;
+}
+.contacts__icon--chat:hover{
+   transition: all 0.3s ease-in-out;
+   opacity: 0.5;
+}
+.contacts__icon--profile:hover{
+   transition: all 0.3s ease-in-out;
+   opacity: 0.5;
+}
+.contacts__email {
+   color: rgb(27, 28, 33);
+   font-size: 16px;
+   font-weight: 500;
+   line-height: 150%;
+   margin-bottom: 10px;
+}
+.contacts__phone {
+   color: rgb(27, 28, 33);
+   font-size: 24px;
+   font-weight: 700;
+   line-height: 133%;
+   margin-bottom: 40px;
+}
+.contacts__languages a{
+   color: rgb(27, 28, 33);
+   font-size: 16px;
+   font-weight: 500;
+   line-height: 150%;
+   margin-right: 4px;
+}
+.contacts__languages a:first-child{
+   color: rgb(126, 126, 130);
+}
+.contacts__languages a:hover{
+   transition: all 0.3s ease-in-out;
+   opacity: 0.5;
+}
+.contacts__languages a:first-child{
+   opacity: 1;
 }
